@@ -2,15 +2,36 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="40"
-   height="40"
-   viewBox="0 0 120 120"
+   width="49.599998"
+   height="49.599998"
+   viewBox="0 0 49.599998 49.599998"
    version="1.1"
    id="svg1"
    xml:space="preserve"
+   sodipodi:docname="icon-maps.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="6.725"
+     inkscape:cx="24.758364"
+     inkscape:cy="24.758364"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="97"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" /><defs
      id="defs1"><linearGradient
        id="linearGradient17"><stop
          style="stop-color:#f1f5f9;stop-opacity:0.2;"
@@ -67,7 +88,7 @@
        height="1"><feGaussianBlur
          stdDeviation="35"
          id="feGaussianBlur10" /></filter><filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        id="filter14"
        x="-0.12"
        y="-0.12"
@@ -106,10 +127,13 @@
        id="clip0_10_553"><rect
          width="310"
          height="444"
-         fill="white"
-         transform="translate(101 34)"
-         id="rect5" /></clipPath></defs><g
-     id="g5"><rect
+         fill="#ffffff"
+         transform="translate(101,34)"
+         id="rect5"
+         x="0"
+         y="0" /></clipPath></defs><g
+     id="g5"
+     transform="translate(-35.2,-35.2)"><rect
        style="font-variation-settings:'wght' 500;fill:#1e2937;fill-opacity:0.4;fill-rule:nonzero;filter:url(#filter14)"
        id="rect1"
        width="40"
@@ -135,7 +159,7 @@
        clip-path="url(#clipPath18)" /></g><g
      style="fill:none"
      id="g11"
-     transform="matrix(0.06756757,0,0,0.06756757,42.702702,41.756388)"><g
+     transform="matrix(0.06756757,0,0,0.06756757,7.5027019,6.5563879)"><g
        clip-path="url(#clip0_10_553)"
        id="g5-8"><path
          d="M 302.925,41.3711 C 288.18,36.6883 272.046,34 255.653,34 208.381,34 165.793,55.4195 137.256,89.3266 l 73.12,61.3964 z"

@@ -2,29 +2,50 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="40"
-   height="40"
-   viewBox="0 0 120 120"
+   width="48.256001"
+   height="59.200001"
+   viewBox="0 0 48.256001 59.200001"
    version="1.1"
    id="svg1"
    xml:space="preserve"
+   sodipodi:docname="icon-bank.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="false"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="6.725"
+     inkscape:cx="24.089219"
+     inkscape:cy="29.665428"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="97"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" /><defs
      id="defs1"><rect
-       x="56.673688"
-       y="42.058396"
-       width="22.81668"
-       height="16.928504"
+       x="56.673687"
+       y="42.058395"
+       width="22.816681"
+       height="16.928505"
        id="rect7" /><rect
        x="52.783287"
        y="52.257557"
        width="31.970041"
-       height="30.949752"
+       height="30.949753"
        id="rect26" /><rect
        x="53.309017"
-       y="53.519309"
-       width="18.295402"
+       y="53.51931"
+       width="18.295403"
        height="16.297628"
        id="rect25" /><linearGradient
        id="linearGradient17"><stop
@@ -82,7 +103,7 @@
        height="1"><feGaussianBlur
          stdDeviation="35"
          id="feGaussianBlur10" /></filter><filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        id="filter14"
        x="-0.12"
        y="-0.12"
@@ -118,7 +139,7 @@
          y="38"
          ry="10"
          rx="10" /></clipPath><filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        id="filter22"
        x="-0.1032"
        y="-0.24"
@@ -147,10 +168,10 @@
          rx="9.0484819" /></clipPath><filter
        id="Adobe_OpacityMaskFilter"
        filterUnits="userSpaceOnUse"
-       x="321.626"
+       x="321.62601"
        y="287.121"
-       width="7.471"
-       height="8.11">
+       width="7.4710002"
+       height="8.1099997">
 			<feColorMatrix
    type="matrix"
    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"
@@ -160,8 +181,8 @@
        filterUnits="userSpaceOnUse"
        x="309.138"
        y="287.285"
-       width="7.471"
-       height="8.11">
+       width="7.4710002"
+       height="8.1099997">
 			<feColorMatrix
    type="matrix"
    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"
@@ -169,10 +190,10 @@
 		</filter><filter
        id="Adobe_OpacityMaskFilter_00000021813318148992452910000016104442706811943854_"
        filterUnits="userSpaceOnUse"
-       x="310.507"
+       x="310.50699"
        y="288.772"
-       width="4.567"
-       height="6.141">
+       width="4.5669999"
+       height="6.1409998">
 				<feColorMatrix
    type="matrix"
    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"
@@ -181,7 +202,7 @@
        id="Adobe_OpacityMaskFilter_00000064342337086352702720000002443566982172518543_"
        filterUnits="userSpaceOnUse"
        x="317.522"
-       y="288.541"
+       y="288.54099"
        width="3.346"
        height="4.632">
 				<feColorMatrix
@@ -191,16 +212,16 @@
 			</filter><filter
        id="Adobe_OpacityMaskFilter_00000016052303198949857320000010837388098942605980_"
        filterUnits="userSpaceOnUse"
-       x="320.21"
-       y="288.113"
+       x="320.20999"
+       y="288.11301"
        width="4.954"
-       height="6.799">
+       height="6.7989998">
 				<feColorMatrix
    type="matrix"
    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"
    id="feColorMatrix250" />
 			</filter><filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        id="filter90"
        x="-0.030583435"
        y="-0.070623538"
@@ -209,7 +230,8 @@
          stdDeviation="0.21 0.21"
          result="blur"
          id="feGaussianBlur90" /></filter></defs><g
-     id="layer1"><rect
+     id="layer1"
+     transform="translate(-35.872,-30.4)"><rect
        style="font-variation-settings:'wght' 500;fill:#1e2937;fill-opacity:1;fill-rule:nonzero;filter:url(#filter22)"
        id="rect22"
        width="40"
@@ -235,7 +257,7 @@
        clip-path="url(#clipPath18)" /><text
        xml:space="preserve"
        id="text24"
-       style="fill:#ffffff;text-orientation:auto;-inkscape-font-specification:'Montserrat, @wght=700';font-family:Montserrat;font-size:13.33329964px;font-variation-settings:'wght' 700;text-align:start;writing-mode:lr-tb;direction:ltr;fill-opacity:1;fill-rule:nonzero;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect25)" /><g
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, @wght=700';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 700;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect25);fill:#ffffff;fill-opacity:1;fill-rule:nonzero" /><g
        id="g91"
        transform="translate(0.77456779,-2.2304833)"><g
          id="g90"
@@ -1173,4 +1195,4 @@
        y="0"><tspan
          x="59.106041"
          y="53.087716"
-         id="tspan1">UK</tspan></text></g></svg>
+         id="tspan2">UK</tspan></text></g></svg>

@@ -2,15 +2,36 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="40"
-   height="40"
-   viewBox="0 0 120 120"
+   width="48.256001"
+   height="59.200001"
+   viewBox="0 0 48.256001 59.200001"
    version="1.1"
    id="svg1"
    xml:space="preserve"
+   sodipodi:docname="icon-urgent.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="6.725"
+     inkscape:cx="24.163569"
+     inkscape:cy="29.665428"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="97"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" /><defs
      id="defs1"><linearGradient
        id="linearGradient3"><stop
          style="stop-color:#2563eb;stop-opacity:1;"
@@ -19,9 +40,9 @@
          style="stop-color:#1c51c1;stop-opacity:1;"
          offset="1"
          id="stop4" /></linearGradient><rect
-       x="50.259783"
-       y="20.293176"
-       width="16.402774"
+       x="50.259785"
+       y="20.293177"
+       width="16.402775"
        height="15.351315"
        id="rect2" /><linearGradient
        id="linearGradient17"><stop
@@ -79,7 +100,7 @@
        height="1"><feGaussianBlur
          stdDeviation="35"
          id="feGaussianBlur10" /></filter><filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        id="filter14"
        x="-0.12"
        y="-0.12"
@@ -115,7 +136,7 @@
          y="38"
          ry="10"
          rx="10" /></clipPath><filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        id="filter22"
        x="-0.1032"
        y="-0.24"
@@ -139,7 +160,8 @@
        x2="60"
        y2="78"
        gradientUnits="userSpaceOnUse" /></defs><g
-     id="layer1"><g
+     id="layer1"
+     transform="translate(-35.872,-30.4)"><g
        id="g23"><rect
          style="font-variation-settings:'wght' 500;fill:#1e2937;fill-opacity:1;fill-rule:nonzero;filter:url(#filter22)"
          id="rect22"
@@ -189,7 +211,7 @@
        transform="matrix(0.74095514,0,0,0.74095514,38.07766,21.646121)"><tspan
          x="50.259766"
          y="31.322091"
-         id="tspan2">!</tspan></text><path
+         id="tspan1">!</tspan></text><path
        id="rect4"
        style="fill:#dbeafe;stroke-width:0.225489"
        d="m 49.100874,70.90322 13.579757,-9.663 0.187952,0.26379 -13.189233,9.397373 z" /><path
