@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="400"
+   height="360"
+   viewBox="0 0 105.83333 95.249997"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       id="filter17"
+       x="-0.022438898"
+       y="-0.090415567"
+       width="1.0448778"
+       height="1.1808311">
+      <feGaussianBlur
+         stdDeviation="0.5 0.5"
+         result="blur"
+         id="feGaussianBlur17" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       id="filter24"
+       x="-0.03023622"
+       y="-0.03023622"
+       width="1.0604724"
+       height="1.0604724">
+      <feGaussianBlur
+         stdDeviation="0.5 0.5"
+         result="blur"
+         id="feGaussianBlur24" />
+    </filter>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath24">
+      <circle
+         style="fill:#10b981;fill-opacity:1;stroke-width:0.0490881"
+         id="circle25"
+         cx="52.916664"
+         cy="46.963539"
+         r="16.536457" />
+    </clipPath>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       id="filter26"
+       x="-0.036283467"
+       y="-0.036283467"
+       width="1.0725669"
+       height="1.0725669">
+      <feGaussianBlur
+         stdDeviation="0.5 0.5"
+         result="blur"
+         id="feGaussianBlur26" />
+    </filter>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath27">
+      <circle
+         style="fill:#11cb8d;fill-opacity:1;stroke-width:0.0392705"
+         id="circle28"
+         cx="52.916664"
+         cy="37.041664"
+         r="13.229166" />
+    </clipPath>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       id="filter29"
+       x="-0.045354333"
+       y="-0.045354333"
+       width="1.0907087"
+       height="1.0907087">
+      <feGaussianBlur
+         stdDeviation="0.5 0.5"
+         result="blur"
+         id="feGaussianBlur29" />
+    </filter>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath30">
+      <circle
+         style="fill:#12d997;fill-opacity:1;stroke-width:0.0294529"
+         id="circle31"
+         cx="52.916664"
+         cy="28.839582"
+         r="9.921875" />
+    </clipPath>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       id="filter32"
+       x="-0.060472441"
+       y="-0.060472441"
+       width="1.1209449"
+       height="1.1209449">
+      <feGaussianBlur
+         stdDeviation="0.5 0.5"
+         result="blur"
+         id="feGaussianBlur32" />
+    </filter>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath33">
+      <circle
+         style="fill:#12e5a1;fill-opacity:1;stroke-width:0.0215988"
+         id="circle34"
+         cx="52.916664"
+         cy="22.35729"
+         r="7.2760415" />
+    </clipPath>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       id="filter39"
+       x="-0.036283467"
+       y="-0.13538606"
+       width="1.0725669"
+       height="1.2707721">
+      <feGaussianBlur
+         stdDeviation="0.5 0.5"
+         result="blur"
+         id="feGaussianBlur39" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       id="filter40"
+       x="-0.036283467"
+       y="-0.13538606"
+       width="1.0725669"
+       height="1.2707721">
+      <feGaussianBlur
+         stdDeviation="0.5 0.5"
+         result="blur"
+         id="feGaussianBlur40" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       id="filter41"
+       x="-0.03023622"
+       y="-0.13538603"
+       width="1.0604724"
+       height="1.2707721">
+      <feGaussianBlur
+         stdDeviation="0.5 0.5"
+         result="blur"
+         id="feGaussianBlur41" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       id="filter2"
+       x="-0.012003106"
+       y="-0.035244786"
+       width="1.0240062"
+       height="1.0704896">
+      <feGaussianBlur
+         stdDeviation="0.3 0.3"
+         result="blur"
+         id="feGaussianBlur2" />
+    </filter>
+  </defs>
+  <ellipse
+     style="fill:#000000;fill-opacity:0.402516;stroke-width:0.0629921;filter:url(#filter2)"
+     id="circle2"
+     cx="53.176899"
+     cy="75.730515"
+     rx="29.992237"
+     ry="10.214277"
+     transform="matrix(1,0,0,1.2261004,-0.26023502,-18.423884)" />
+  <circle
+     style="fill:#0f172a;fill-opacity:1;stroke-width:0.107941"
+     id="path1"
+     cx="52.916664"
+     cy="37.215546"
+     r="29.992237" />
+  <circle
+     style="fill:#163b8c;fill-opacity:1;stroke-width:0.076858"
+     id="path2"
+     cx="52.916664"
+     cy="70.610977"
+     r="5.2916665" />
+</svg>

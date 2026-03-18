@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="400"
+   height="360"
+   viewBox="0 0 105.83333 95.249997"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1">
+    <g
+       id="g16"
+       transform="translate(0,16.933332)">
+      <g
+         id="g15"
+         transform="translate(-2.8625987,-8.3704467)">
+        <circle
+           style="fill:#2563eb;fill-opacity:0.5;stroke-width:0.0568316"
+           id="circle1"
+           cx="49.032391"
+           cy="-28.214197"
+           r="6.614583"
+           transform="scale(1,-1)" />
+        <circle
+           style="fill:#2563eb;fill-opacity:0.5;stroke-width:0.0568316"
+           id="circle2"
+           cx="62.526138"
+           cy="-28.214197"
+           r="6.614583"
+           transform="scale(1,-1)" />
+        <g
+           id="g4"
+           transform="matrix(1,0,0,-1,35.670932,46.470446)"
+           style="fill:#2563eb;fill-opacity:0.35">
+          <circle
+             style="fill:#2563eb;fill-opacity:0.35;stroke-width:0.0568316"
+             id="path1"
+             cx="6.614583"
+             cy="6.614583"
+             r="6.614583" />
+          <circle
+             style="fill:#2563eb;fill-opacity:0.35;stroke-width:0.0568316"
+             id="circle3"
+             cx="20.108332"
+             cy="6.614583"
+             r="6.614583" />
+          <circle
+             style="fill:#2563eb;fill-opacity:0.35;stroke-width:0.0568316"
+             id="circle4"
+             cx="33.602081"
+             cy="6.614583"
+             r="6.614583" />
+        </g>
+        <g
+           id="g9"
+           transform="matrix(1,0,0,-1,28.924057,58.112113)"
+           style="fill:#2563eb;fill-opacity:0.2">
+          <g
+             id="g6"
+             style="fill:#2563eb;fill-opacity:0.2">
+            <circle
+               style="fill:#2563eb;fill-opacity:0.2;stroke-width:0.0568316"
+               id="circle5"
+               cx="6.614583"
+               cy="6.614583"
+               r="6.614583" />
+            <circle
+               style="fill:#2563eb;fill-opacity:0.2;stroke-width:0.0568316"
+               id="circle6"
+               cx="20.108332"
+               cy="6.614583"
+               r="6.614583" />
+          </g>
+          <g
+             id="g8"
+             transform="translate(26.987499)"
+             style="fill:#2563eb;fill-opacity:0.2">
+            <circle
+               style="fill:#2563eb;fill-opacity:0.2;stroke-width:0.0568316"
+               id="circle7"
+               cx="6.614583"
+               cy="6.614583"
+               r="6.614583" />
+            <circle
+               style="fill:#2563eb;fill-opacity:0.2;stroke-width:0.0568316"
+               id="circle8"
+               cx="20.108332"
+               cy="6.614583"
+               r="6.614583" />
+          </g>
+        </g>
+        <g
+           id="g14"
+           transform="matrix(1,0,0,-1,22.177182,69.753779)"
+           style="fill:#2563eb;fill-opacity:0.1">
+          <g
+             id="g11"
+             transform="translate(26.987499)"
+             style="fill:#2563eb;fill-opacity:0.1">
+            <circle
+               style="fill:#2563eb;fill-opacity:0.1;stroke-width:0.0568316"
+               id="circle9"
+               cx="6.614583"
+               cy="6.614583"
+               r="6.614583" />
+            <circle
+               style="fill:#2563eb;fill-opacity:0.1;stroke-width:0.0568316"
+               id="circle10"
+               cx="20.108332"
+               cy="6.614583"
+               r="6.614583" />
+            <circle
+               style="fill:#2563eb;fill-opacity:0.1;stroke-width:0.0568316"
+               id="circle11"
+               cx="33.602081"
+               cy="6.614583"
+               r="6.614583" />
+          </g>
+          <g
+             id="g13"
+             style="fill:#2563eb;fill-opacity:0.1">
+            <circle
+               style="fill:#2563eb;fill-opacity:0.1;stroke-width:0.0568316"
+               id="circle12"
+               cx="6.614583"
+               cy="6.614583"
+               r="6.614583" />
+            <circle
+               style="fill:#2563eb;fill-opacity:0.1;stroke-width:0.0568316"
+               id="circle13"
+               cx="20.108332"
+               cy="6.614583"
+               r="6.614583" />
+          </g>
+        </g>
+      </g>
+      <circle
+         style="fill:#2563eb;fill-opacity:1;stroke-width:0.0568316"
+         id="circle14"
+         cx="52.916664"
+         cy="6.614583"
+         r="6.614583" />
+    </g>
+  </g>
+</svg>
