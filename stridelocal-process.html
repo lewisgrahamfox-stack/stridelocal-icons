@@ -1,0 +1,290 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Inter:wght@400;500&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;}
+
+#sl-proc-wrap{
+  width:100%;
+  max-width:1200px;
+  margin:0 auto;
+  padding:100px 0 100px;
+  font-family:'Inter',sans-serif;
+  position:relative;
+}
+
+.sl-proc-eyebrow{
+  font-size:12px;font-weight:500;letter-spacing:0.12em;
+  text-transform:uppercase;color:#2563EB;
+  text-align:center;margin-bottom:8px;
+}
+
+.sl-proc-heading{
+  font-family:'Montserrat',sans-serif;font-weight:600;
+  font-size:58px;line-height:1.05;letter-spacing:-0.02em;
+  color:#0F172A;text-align:center;
+  margin:20px 0 80px;
+}
+
+.sl-proc-heading span{
+  background:linear-gradient(to right,#3B82F6,#2563EB);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+/* Main grid: [content] [centre-col] [content] */
+.sl-proc-steps{
+  position:relative;
+  width:100%;
+}
+
+.sl-proc-step{
+  display:grid;
+  grid-template-columns:1fr 120px 1fr;
+  align-items:center;
+  gap:0;
+  padding:60px 0;
+  position:relative;
+  z-index:1;
+  min-height:520px;
+}
+
+.sl-proc-centre{
+  grid-column:2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  height:100%;
+}
+
+.sl-proc-dot{
+  width:74px;height:74px;border-radius:50%;
+  background:#2563EB;
+  box-shadow:0 2px 8px rgba(15,23,42,0.35);
+  flex-shrink:0;
+  position:relative;
+  z-index:2;
+}
+
+.sl-proc-anim{
+  width:540px;
+  height:340px;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 8px 40px rgba(0,0,0,0.12);
+  position:relative;
+}
+
+.sl-proc-anim iframe{
+  width:1000px;
+  height:630px;
+  border:none;
+  display:block;
+  transform:scale(0.54);
+  transform-origin:top left;
+  pointer-events:none;
+}
+
+.sl-proc-copy{
+  padding:0 48px;
+}
+
+.sl-proc-step.sl-left .sl-proc-copy{
+  grid-column:3;
+  text-align:left;
+}
+
+.sl-proc-step.sl-right .sl-proc-copy{
+  grid-column:1;
+  text-align:right;
+}
+
+.sl-proc-step.sl-left .sl-proc-anim{
+  grid-column:1;
+}
+
+.sl-proc-step.sl-right .sl-proc-anim{
+  grid-column:3;
+}
+
+.sl-proc-step.sl-left .sl-proc-centre{
+  grid-column:2;
+}
+
+.sl-proc-step.sl-right .sl-proc-centre{
+  grid-column:2;
+}
+
+.sl-proc-copy-num{
+  font-size:12px;font-weight:500;letter-spacing:0.12em;
+  text-transform:uppercase;color:#2563EB;
+  margin-bottom:16px;display:block;
+}
+
+.sl-proc-copy-title{
+  font-family:'Montserrat',sans-serif;font-weight:600;
+  font-size:38px;line-height:1.1;letter-spacing:-0.02em;
+  color:#0F172A;margin-bottom:20px;
+}
+
+.sl-proc-copy-body{
+  font-size:17px;font-weight:400;line-height:1.8;
+  color:#334155;
+}
+
+/* SVG line overlay */
+#sl-proc-svg{
+  position:absolute;top:0;left:0;
+  width:100%;overflow:visible;
+  pointer-events:none;z-index:0;
+}
+
+/* Mobile */
+@media(max-width:736px){
+  #sl-proc-wrap{padding:70px 24px 70px;}
+  .sl-proc-heading{font-size:36px;margin-bottom:48px;}
+  .sl-proc-step{
+    grid-template-columns:56px 1fr;
+    grid-template-rows:auto auto;
+    min-height:auto;
+    padding:40px 0;
+    gap:0;
+  }
+  .sl-proc-step.sl-left .sl-proc-anim,
+  .sl-proc-step.sl-right .sl-proc-anim{
+    grid-column:2;grid-row:1;
+  }
+  .sl-proc-step.sl-left .sl-proc-centre,
+  .sl-proc-step.sl-right .sl-proc-centre{
+    grid-column:1;grid-row:1;
+    align-items:flex-start;
+    padding-top:8px;
+  }
+  .sl-proc-step.sl-left .sl-proc-copy,
+  .sl-proc-step.sl-right .sl-proc-copy{
+    grid-column:2;grid-row:2;
+    text-align:left;
+    padding:24px 0 0 0;
+  }
+  .sl-proc-dot{width:56px;height:56px;}
+  .sl-proc-copy-title{font-size:26px;}
+  .sl-proc-copy-body{font-size:15px;}
+  .sl-proc-anim iframe{height:320px;}
+}
+</style>
+
+<div id="sl-proc-wrap">
+  <svg id="sl-proc-svg"></svg>
+
+  <p class="sl-proc-eyebrow">What we do</p>
+  <h2 class="sl-proc-heading">From Invisible to<br><span>Unmissable</span></h2>
+
+  <div class="sl-proc-steps" id="sl-proc-steps">
+
+    <!-- ACT 1 — animation left, copy right -->
+    <div class="sl-proc-step sl-left" id="sl-ps1">
+      <div class="sl-proc-anim">
+        <iframe src="https://lewisgrahamfox-stack.github.io/stridelocal-icons/sl-act1.html" loading="lazy" scrolling="no" allowtransparency="true" style="background:transparent;"></iframe>
+      </div>
+      <div class="sl-proc-centre">
+        <div class="sl-proc-dot" id="sl-pd1"></div>
+      </div>
+      <div class="sl-proc-copy">
+        <span class="sl-proc-copy-num">01</span>
+        <h3 class="sl-proc-copy-title">Visibility starts with trust.</h3>
+        <p class="sl-proc-copy-body">We optimise your Google Business Profile so customers find you first, trust what they see, and choose you over everyone else in your area.</p>
+      </div>
+    </div>
+
+    <!-- ACT 2 — copy left, animation right -->
+    <div class="sl-proc-step sl-right" id="sl-ps2">
+      <div class="sl-proc-copy">
+        <span class="sl-proc-copy-num">02</span>
+        <h3 class="sl-proc-copy-title">Ahead of the game.</h3>
+        <p class="sl-proc-copy-body">Over 75% of clicks go to the top three search results. We put you there. We keep you there.</p>
+      </div>
+      <div class="sl-proc-centre">
+        <div class="sl-proc-dot" id="sl-pd2"></div>
+      </div>
+      <div class="sl-proc-anim">
+        <iframe src="https://lewisgrahamfox-stack.github.io/stridelocal-icons/sl-act2.html" loading="lazy" scrolling="no" allowtransparency="true" style="background:transparent;"></iframe>
+      </div>
+    </div>
+
+    <!-- ACT 3 — animation left, copy right -->
+    <div class="sl-proc-step sl-left" id="sl-ps3">
+      <div class="sl-proc-anim">
+        <iframe src="https://lewisgrahamfox-stack.github.io/stridelocal-icons/sl-act3.html" loading="lazy" scrolling="no" allowtransparency="true" style="background:transparent;"></iframe>
+      </div>
+      <div class="sl-proc-centre">
+        <div class="sl-proc-dot" id="sl-pd3"></div>
+      </div>
+      <div class="sl-proc-copy">
+        <span class="sl-proc-copy-num">03</span>
+        <h3 class="sl-proc-copy-title">The obvious choice.</h3>
+        <p class="sl-proc-copy-body">With consistent visibility, your business becomes the one to beat. Our clients don't just dominate their immediate areas, but expand their reach, take on more jobs and grow their businesses.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function(){
+  function draw(){
+    var wrap = document.getElementById('sl-proc-wrap');
+    var svg  = document.getElementById('sl-proc-svg');
+    var dotIds = ['sl-pd1','sl-pd2','sl-pd3'];
+    var dots = dotIds.map(function(id){ return document.getElementById(id); });
+    if(!wrap||!svg||!dots[0]) return;
+
+    var wr = wrap.getBoundingClientRect();
+    var W  = wr.width;
+    var totalH = wr.height;
+
+    svg.style.height = totalH + 'px';
+    svg.setAttribute('viewBox','0 0 '+W+' '+totalH);
+
+    // Get dot centre positions relative to wrap
+    var pts = dots.map(function(d){
+      var r = d.getBoundingClientRect();
+      return {
+        x: r.left - wr.left + r.width / 2,
+        y: r.top  - wr.top  + r.height / 2
+      };
+    });
+
+    // Straight vertical line through all three dot centres
+    // Line starts above first dot, ends below last dot
+    var lineX = pts[0].x; // all dots share same x (centre column)
+    var lineTop = pts[0].y;
+    var lineBot = pts[2].y;
+
+    var dotR = 37; // half of 74px dot
+
+    var filterDef = '<defs><filter id="sl-proc-shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.35"/></filter></defs>';
+
+    // Line — gap through each dot so line doesn't show through
+    var linePath =
+      'M '+lineX+' '+lineTop+' L '+lineX+' '+(pts[0].y - dotR)+' '+
+      'M '+lineX+' '+(pts[0].y + dotR)+' L '+lineX+' '+(pts[1].y - dotR)+' '+
+      'M '+lineX+' '+(pts[1].y + dotR)+' L '+lineX+' '+(pts[2].y - dotR)+' '+
+      'M '+lineX+' '+(pts[2].y + dotR)+' L '+lineX+' '+lineBot;
+
+    var pathEl = '<path d="'+linePath+'" fill="none" stroke="#2563EB" stroke-width="4" stroke-linecap="round"/>';
+
+    // Dots
+    var dotsEl = '';
+    pts.forEach(function(p){
+      dotsEl += '<circle cx="'+p.x+'" cy="'+p.y+'" r="'+dotR+'" fill="#2563EB" filter="url(#sl-proc-shadow)"/>';
+    });
+
+    svg.innerHTML = filterDef + pathEl + dotsEl;
+  }
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded', function(){ setTimeout(draw, 200); });
+  } else {
+    setTimeout(draw, 200);
+  }
+  window.addEventListener('resize', draw);
+})();
+</script>
