@@ -1,0 +1,389 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#0F172A;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:40px 20px;font-family:'Roboto',sans-serif;}
+
+.browser{background:#fff;border-radius:12px;width:100%;max-width:1000px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.4);}
+
+.browser-chrome{background:#DEE1E6;border-bottom:1px solid #DEE1E6;}
+.browser-tabs{display:flex;align-items:center;padding:8px 16px 0;}
+.browser-tab{background:#fff;border-radius:8px 8px 0 0;padding:7px 8px;font-size:11px;color:#202124;display:flex;align-items:center;gap:6px;min-width:200px;font-family:-apple-system,"Segoe UI",sans-serif;position:relative;}
+.browser-tab::before,.browser-tab::after{content:"";position:absolute;bottom:0;width:12px;height:12px;background:#DEE1E6;}
+.browser-tab::before{left:-12px;border-bottom-right-radius:12px;box-shadow:6px 0 0 0 #fff;}
+.browser-tab::after{right:-12px;border-bottom-left-radius:12px;box-shadow:-6px 0 0 0 #fff;}
+.browser-tab-x{color:#3C4043;font-size:16px;font-weight:600;line-height:1;position:relative;top:-4px;}
+.browser-nav{display:flex;align-items:center;gap:0;padding:4px 8px 6px;background:#fff;border-bottom:1px solid #E2E8F0;}
+.browser-nav-btn{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#3C4043;font-size:13px;font-weight:400;}
+.browser-url-bar{flex:1;background:#F1F3F4;border:none;border-radius:20px;padding:4px 6px 4px 4px;font-size:13px;color:#202124;display:flex;align-items:center;gap:6px;margin:0 8px;font-family:-apple-system,"Segoe UI",sans-serif;}
+
+.page-wrap{height:480px;overflow:hidden;position:relative;background:#fff;}
+.page{position:absolute;top:0;left:0;width:100%;height:100%;background:#fff;}
+.page.hidden{display:none;}
+
+#g-home{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 0 120px;position:relative;}
+.g-home-header{position:absolute;top:0;left:0;right:0;display:flex;justify-content:flex-end;align-items:center;padding:12px 16px;gap:12px;font-size:12px;}
+.g-home-header a{color:#202124;text-decoration:none;}
+.g-home-header-btn{background:#1A73E8;color:#fff;border-radius:4px;padding:7px 14px;font-size:12px;font-weight:500;}
+.g-big-logo{margin-bottom:18px;}
+.g-home-search{width:100%;max-width:480px;border:1px solid #DFE1E5;border-radius:24px;padding:6px 6px 6px 16px;display:flex;align-items:center;gap:10px;box-shadow:0 1px 6px rgba(32,33,36,0.1);font-size:15px;color:#202124;background:#fff;}
+.g-search-text{flex:1;display:flex;align-items:center;}
+.g-cursor{display:inline-block;width:1px;height:16px;background:#202124;vertical-align:middle;margin-left:1px;animation:blink 1s step-end infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+.g-home-btns{display:flex;gap:10px;margin-top:22px;}
+.g-home-btn{background:#F8F9FA;border:1px solid #F8F9FA;border-radius:6px;padding:7px 16px;font-size:12px;color:#3C4043;cursor:pointer;}
+.g-footer{position:absolute;bottom:0;left:0;right:0;background:#F2F2F2;border-top:1px solid #E4E4E4;padding:12px 20px;display:flex;justify-content:space-between;font-size:12px;color:#70757A;}
+.g-footer a{color:#70757A;text-decoration:none;margin:0 8px;}
+</style>
+
+<div class="browser">
+  <div class="browser-chrome">
+    <div class="browser-tabs">
+      <div class="browser-tab">
+        <svg width="16" height="16" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        <span>Google</span>
+        <span class="browser-tab-x" style="margin-left:auto;">×</span>
+      </div>
+      <div style="width:28px;height:28px;display:flex;align-items:center;justify-content:center;color:#3C4043;font-size:18px;font-weight:300;margin-left:2px;align-self:center;">+</div>
+    </div>
+    <div class="browser-nav">
+      <div class="browser-nav-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M5 12l7-7M5 12l7 7" stroke="#3C4043" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="browser-nav-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M14 5l7 7-7 7" stroke="#3C4043" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="browser-nav-btn"><svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#3C4043"><path d="M480-160q-134 0-227-93t-93-227q0-134 93-227t227-93q69 0 132 28.5T720-690v-110h80v280H520v-80h168q-32-56-87.5-88T480-720q-100 0-170 70t-70 170q0 100 70 170t170 70q77 0 139-44t87-116h84q-28 106-114 173t-196 67Z"/></svg></div>
+      <div class="browser-url-bar">
+        <span style="width:18px;height:18px;border-radius:50%;background:#fff;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;"><svg xmlns="http://www.w3.org/2000/svg" height="14px" viewBox="0 -960 960 960" width="14px" fill="#5F6368"><path d="M603.5-193.5Q560-237 560-300t43.5-106.5Q647-450 710-450t106.5 43.5Q860-363 860-300t-43.5 106.5Q773-150 710-150t-106.5-43.5Zm156-57Q780-271 780-300t-20.5-49.5Q739-370 710-370t-49.5 20.5Q640-329 640-300t20.5 49.5Q681-230 710-230t49.5-20.5ZM160-260v-80h320v80H160Zm-16.5-293.5Q100-597 100-660t43.5-106.5Q187-810 250-810t106.5 43.5Q400-723 400-660t-43.5 106.5Q313-510 250-510t-106.5-43.5Zm156-57Q320-631 320-660t-20.5-49.5Q279-730 250-730t-49.5 20.5Q180-689 180-660t20.5 49.5Q221-590 250-590t49.5-20.5ZM480-620v-80h320v80H480Zm230 320ZM250-660Z"/></svg></span>
+        <span id="url-bar-text" style="line-height:1;position:relative;top:-1px;">google.com</span>
+        <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#3C4043" style="margin-left:auto;margin-right:5px;flex-shrink:0;"><path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+
+    <!-- PAGE 1: Google Home -->
+    <div id="page-home" class="page">
+      <div id="g-home">
+        <div class="g-home-header-left" style="position:absolute;top:0;left:0;padding:14px 16px;display:flex;gap:16px;font-size:12px;"><a href="#" style="color:#202124;text-decoration:none;">About</a><a href="#" style="color:#202124;text-decoration:none;">Store</a></div>
+        <div class="g-home-header">
+          <a href="#">Gmail</a>
+          <a href="#">Images</a>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="6" cy="6" r="1.5" fill="#5F6368"/><circle cx="12" cy="6" r="1.5" fill="#5F6368"/><circle cx="18" cy="6" r="1.5" fill="#5F6368"/><circle cx="6" cy="12" r="1.5" fill="#5F6368"/><circle cx="12" cy="12" r="1.5" fill="#5F6368"/><circle cx="18" cy="12" r="1.5" fill="#5F6368"/><circle cx="6" cy="18" r="1.5" fill="#5F6368"/><circle cx="12" cy="18" r="1.5" fill="#5F6368"/><circle cx="18" cy="18" r="1.5" fill="#5F6368"/></svg>
+          <span class="g-home-header-btn">Sign in</span>
+        </div>
+        <div class="g-big-logo">
+          <svg width="200" height="68" viewBox="0 0 272 92" xmlns="http://www.w3.org/2000/svg"><path d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#EA4335"/><path d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#FBBC05"/><path d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z" fill="#4285F4"/><path d="M225 3v65h-9.5V3h9.5z" fill="#34A853"/><path d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z" fill="#EA4335"/><path d="M35.29 41.41V32h31.64c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49.01z" fill="#4285F4"/></svg>
+        </div>
+        <div class="g-home-search">
+          <span style="font-size:22px;color:#202124;font-weight:300;line-height:1;">+</span>
+          <div class="g-search-text">
+            <span id="typed"></span><span class="g-cursor"></span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <svg xmlns="http://www.w3.org/2000/svg" height="17px" viewBox="0 -960 960 960" width="17px" fill="#3C4043"><path d="M 480 -880 C 446.66667 -880 418.33333 -868.33333 395 -845 C 371.66667 -821.66667 360 -793.33333 360 -760 L 360 -520 C 360 -486.66667 371.66667 -458.33333 395 -435 C 418.33333 -411.66667 446.66667 -400 480 -400 C 513.33333 -400 541.66667 -411.66667 565 -435 C 588.33333 -458.33333 600 -486.66667 600 -520 L 600 -760 C 600 -793.33333 588.33333 -821.66667 565 -845 C 541.66667 -868.33333 513.33333 -880 480 -880 z M 200 -520 C 200 -450 222.63542 -388.68229 267.96875 -336.01562 C 313.30208 -283.34896 370.66667 -252.30208 440 -242.96875 L 440 -120 L 520 -120 L 520 -242.96875 C 589.33333 -252.30208 646.69792 -283.34896 692.03125 -336.01562 C 737.36458 -388.68229 760 -450 760 -520 L 680 -520 C 680 -464.66667 660.48437 -417.51562 621.48438 -378.51562 C 582.48438 -339.51562 535.33333 -320 480 -320 C 424.66667 -320 377.51563 -339.51562 338.51562 -378.51562 C 299.51562 -417.51562 280 -464.66667 280 -520 L 200 -520 z"/></svg>
+            <svg focusable="false" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" width="17" height="17"><rect fill="none" height="192" width="192"/><g><circle fill="#3C4043" cx="144.07" cy="144" r="16"/><circle fill="#3C4043" cx="96.07" cy="104" r="24"/><path fill="#3C4043" d="M24,135.2c0,18.11,14.69,32.8,32.8,32.8H96v-16l-40.1-0.1c-8.8,0-15.9-8.19-15.9-17.9v-18H24V135.2z"/><path fill="#3C4043" d="M168,72.8c0-18.11-14.69-32.8-32.8-32.8H116l20,16c8.8,0,16,8.29,16,18v30h16V72.8z"/><path fill="#3C4043" d="M112,24l-32,0L68,40H56.8C38.69,40,24,54.69,24,72.8V92h16V74c0-9.71,7.2-18,16-18h80L112,24z"/></g></svg>
+            <span style="border:1.5px solid #C4C7C5;border-radius:20px;padding:4px 10px;font-size:12px;color:#202124;white-space:nowrap;display:flex;align-items:center;gap:5px;font-family:-apple-system,'Segoe UI',sans-serif;background:#F2F2F2;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="10" cy="10" r="6" stroke="#3C4043" stroke-width="1.8"/><path d="M15 15l4 4" stroke="#3C4043" stroke-width="1.8" stroke-linecap="round"/><path d="M20 0l1 3 3 1-3 1-1 3-1-3-3-1 3-1z" fill="#3C4043"/></svg> AI Mode</span>
+          </div>
+        </div>
+        <div class="g-home-btns">
+          <div class="g-home-btn">Google Search</div>
+          <div class="g-home-btn">I'm Feeling Lucky</div>
+        </div>
+        <div class="g-footer">
+          <div>United Kingdom</div>
+          <div><a href="#">Advertising</a><a href="#">Business</a><a href="#">How Search works</a></div>
+          <div><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Settings</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 2: Results -->
+    <div id="page-results" class="page hidden">
+
+      <!-- Results header -->
+      <div style="padding:8px 14px 8px 60px;display:flex;align-items:center;gap:10px;">
+        <svg width="55" height="18" viewBox="0 0 272 92" xmlns="http://www.w3.org/2000/svg"><path d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#EA4335"/><path d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#FBBC05"/><path d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z" fill="#4285F4"/><path d="M225 3v65h-9.5V3h9.5z" fill="#34A853"/><path d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z" fill="#EA4335"/><path d="M35.29 41.41V32h31.64c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49.01z" fill="#4285F4"/></svg>
+        <div style="flex:1;border:1px solid #DFE1E5;border-radius:24px;padding:6px 6px 6px 16px;display:flex;align-items:center;gap:8px;font-size:14px;color:#202124;max-width:580px;font-family:'Roboto',sans-serif;box-shadow:0 1px 6px rgba(32,33,36,0.15);">
+          near me
+          <div style="display:flex;align-items:center;gap:8px;margin-left:auto;">
+            <span style="color:#70757A;font-size:20px;font-weight:300;">&#215;</span>
+            <span style="width:1px;height:20px;background:#E2E8F0;display:inline-block;"></span>
+            <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#3C4043"><path d="M 480 -880 C 446.66667 -880 418.33333 -868.33333 395 -845 C 371.66667 -821.66667 360 -793.33333 360 -760 L 360 -520 C 360 -486.66667 371.66667 -458.33333 395 -435 C 418.33333 -411.66667 446.66667 -400 480 -400 C 513.33333 -400 541.66667 -411.66667 565 -435 C 588.33333 -458.33333 600 -486.66667 600 -520 L 600 -760 C 600 -793.33333 588.33333 -821.66667 565 -845 C 541.66667 -868.33333 513.33333 -880 480 -880 z M 200 -520 C 200 -450 222.63542 -388.68229 267.96875 -336.01562 C 313.30208 -283.34896 370.66667 -252.30208 440 -242.96875 L 440 -120 L 520 -120 L 520 -242.96875 C 589.33333 -252.30208 646.69792 -283.34896 692.03125 -336.01562 C 737.36458 -388.68229 760 -450 760 -520 L 680 -520 C 680 -464.66667 660.48437 -417.51562 621.48438 -378.51562 C 582.48438 -339.51562 535.33333 -320 480 -320 C 424.66667 -320 377.51563 -339.51562 338.51562 -378.51562 C 299.51562 -417.51562 280 -464.66667 280 -520 L 200 -520 z"/></svg>
+            <svg width="18" height="18" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg"><g><circle fill="#3C4043" cx="144.07" cy="144" r="16"/><circle fill="#3C4043" cx="96.07" cy="104" r="24"/><path fill="#3C4043" d="M24,135.2c0,18.11,14.69,32.8,32.8,32.8H96v-16l-40.1-0.1c-8.8,0-15.9-8.19-15.9-17.9v-18H24V135.2z"/><path fill="#3C4043" d="M168,72.8c0-18.11-14.69-32.8-32.8-32.8H116l20,16c8.8,0,16,8.29,16,18v30h16V72.8z"/><path fill="#3C4043" d="M112,24l-32,0L68,40H56.8C38.69,40,24,54.69,24,72.8V92h16V74c0-9.71,7.2-18,16-18h80L112,24z"/></g></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#3C4043" stroke-width="2"/><path d="M21 21l-4-4" stroke="#3C4043" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div style="display:flex;padding:0 0 0 48px;border-bottom:1px solid #E2E8F0;overflow-x:auto;font-family:'Roboto',sans-serif;">
+        <div style="padding:10px 12px;font-size:13px;color:#70757A;border-bottom:3px solid transparent;white-space:nowrap;">AI Mode</div>
+        <div style="padding:10px 12px;font-size:13px;color:#1A0DAB;border-bottom:3px solid #1A0DAB;white-space:nowrap;">All</div>
+        <div style="padding:10px 12px;font-size:13px;color:#70757A;border-bottom:3px solid transparent;white-space:nowrap;">Maps</div>
+        <div style="padding:10px 12px;font-size:13px;color:#70757A;border-bottom:3px solid transparent;white-space:nowrap;">Images</div>
+        <div style="padding:10px 12px;font-size:13px;color:#70757A;border-bottom:3px solid transparent;white-space:nowrap;">Forums</div>
+        <div style="padding:10px 12px;font-size:13px;color:#70757A;border-bottom:3px solid transparent;white-space:nowrap;">Shopping</div>
+        <div style="padding:10px 12px;font-size:13px;color:#70757A;border-bottom:3px solid transparent;white-space:nowrap;">Videos</div>
+        <div style="padding:10px 12px;font-size:13px;color:#70757A;border-bottom:3px solid transparent;white-space:nowrap;display:flex;align-items:center;gap:2px;">More <span style="font-size:7px;">&#9660;</span></div>
+        <div style="padding:10px 12px;font-size:13px;color:#70757A;border-bottom:3px solid transparent;white-space:nowrap;display:flex;align-items:center;gap:2px;">Tools <span style="font-size:7px;">&#9660;</span></div>
+      </div>
+
+      <!-- Scrollable results -->
+      <div style="height:400px;overflow:hidden;position:relative;">
+        <div id="pageInner" style="padding:0 14px 0 60px;font-family:'Roboto',sans-serif;">
+
+          <!-- Filter pills -->
+          <div style="padding:8px 0;display:flex;gap:8px;">
+            <span style="border:1px solid #C4C7C5;border-radius:20px;padding:5px 14px;font-size:12px;color:#202124;white-space:nowrap;cursor:pointer;">Online estimates</span>
+            <span style="border:1px solid #C4C7C5;border-radius:20px;padding:5px 14px;font-size:12px;color:#202124;white-space:nowrap;cursor:pointer;">Open now</span>
+            <span style="border:1px solid #C4C7C5;border-radius:20px;padding:5px 14px;font-size:12px;color:#202124;white-space:nowrap;cursor:pointer;">Top rated</span>
+          </div>
+
+          <!-- Location -->
+          <div style="padding:5px 0 6px;display:flex;align-items:center;gap:8px;font-size:13px;color:#70757A;">
+            Results for <strong>Your Area</strong>
+            <span style="border:1px solid #C4C7C5;border-radius:20px;padding:3px 10px;font-size:12px;color:#1A73E8;display:flex;align-items:center;gap:4px;cursor:pointer;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" stroke="#1A73E8" stroke-width="2"/><circle cx="12" cy="12" r="9" stroke="#1A73E8" stroke-width="1.5" stroke-dasharray="2 2"/></svg>Use precise location</span>
+            <span style="color:#70757A;font-size:18px;cursor:pointer;">&#8942;</span>
+          </div>
+
+          <div style="font-size:15px;font-weight:500;color:#202124;margin-bottom:8px;">Businesses</div>
+
+          <div style="display:inline-flex;flex-direction:column;">
+            <div style="display:inline-block;margin-bottom:12px;min-width:320px;max-width:520px;">
+              <div style="height:130px;overflow:hidden;border-radius:8px;border:1px solid #E2E8F0;position:relative;">
+                <img src="https://lewisgrahamfox-stack.github.io/stridelocal-icons/Act_2%20_Map.png" style="width:520px;height:130px;display:block;" />
+              </div>
+              <div id="mp-listings" style="overflow:hidden;">
+                <div style="padding:10px 12px;display:flex;justify-content:space-between;align-items:flex-start;border-top:1px solid #F1F3F4;" id="mp1">
+                  <div>
+                    <div id="mp1name" style="font-size:14px;font-weight:400;color:#202124;margin-bottom:2px;">Local Competitor</div>
+                    <div class="mp1-rating" style="font-size:12px;color:#70757A;margin-bottom:1px;"><span style="color:#FBBC04;">&#9733;&#9733;&#9733;&#9733;</span><span style="color:#FBBC04;font-size:9px;">&#9733;</span> <span style="color:#202124;">4.1</span> (80) &middot; Local Service</div>
+                    <div style="font-size:12px;color:#70757A;margin-bottom:1px;">Your Area</div>
+                    <div style="font-size:12px;margin-bottom:2px;"><span style="color:#188038;">Open 24 hours</span> &middot; 01234 567890</div>
+                    <div class="mp1-quote" style="font-size:12px;color:#70757A;">"Decent enough, got the job done"</div>
+                  </div>
+                  <div style="display:flex;gap:8px;flex-shrink:0;margin-left:12px;padding-top:4px;">
+                    <div style="display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:44px;height:44px;border-radius:50%;border:1px solid #DFE1E5;display:flex;align-items:center;justify-content:center;"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#1A73E8"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-7-.5-14.5T799-507q-5 29-27 48t-52 19h-80q-33 0-56.5-23.5T560-520v-40H400v-80q0-33 23.5-56.5T480-720h40q0-23 12.5-40.5T563-789q-20-5-40.5-8t-42.5-3q-134 0-227 93t-93 227h200q66 0 113 47t47 113v40H400v110q20 5 39.5 7.5T480-160Z"/></svg></div><span style="font-size:11px;color:#1A73E8;">Website</span></div>
+                    <div style="display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:44px;height:44px;border-radius:50%;border:1px solid #DFE1E5;display:flex;align-items:center;justify-content:center;"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#1A73E8"><path d="M320-360h80v-120h140v100l140-140-140-140v100H360q-17 0-28.5 11.5T320-520v160ZM480-80q-15 0-29.5-6T424-104L104-424q-12-12-18-26.5T80-480q0-15 6-29.5t18-26.5l320-320q12-12 26.5-18t29.5-6q15 0 29.5 6t26.5 18l320 320q12 12 18 26.5t6 29.5q0 15-6 29.5T856-424L536-104q-12 12-26.5 18T480-80Z"/></svg></div><span style="font-size:11px;color:#1A73E8;">Directions</span></div>
+                  </div>
+                </div>
+                <div id="mp2" style="padding:10px 12px;display:flex;justify-content:space-between;align-items:flex-start;border-top:1px solid #F1F3F4;">
+                  <div>
+                    <div style="font-size:14px;font-weight:400;color:#202124;margin-bottom:2px;">Nearby Services Ltd</div>
+                    <div style="font-size:12px;color:#70757A;margin-bottom:1px;"><span style="color:#FBBC04;">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <span style="color:#202124;">5.0</span> (198) &middot; Local Service</div>
+                    <div style="font-size:12px;color:#70757A;margin-bottom:1px;">Your Area</div>
+                    <div style="font-size:12px;margin-bottom:2px;"><span style="color:#188038;">Open 24 hours</span> &middot; 01234 567891</div>
+                    <div style="font-size:12px;color:#70757A;">"Always reliable, been using them for years"</div>
+                  </div>
+                  <div style="display:flex;gap:8px;flex-shrink:0;margin-left:12px;padding-top:4px;"><div style="display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:44px;height:44px;border-radius:50%;border:1px solid #DFE1E5;display:flex;align-items:center;justify-content:center;"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#1A73E8"><path d="M320-360h80v-120h140v100l140-140-140-140v100H360q-17 0-28.5 11.5T320-520v160ZM480-80q-15 0-29.5-6T424-104L104-424q-12-12-18-26.5T80-480q0-15 6-29.5t18-26.5l320-320q12-12 26.5-18t29.5-6q15 0 29.5 6t26.5 18l320 320q12 12 18 26.5t6 29.5q0 15-6 29.5T856-424L536-104q-12 12-26.5 18T480-80Z"/></svg></div><span style="font-size:11px;color:#1A73E8;">Directions</span></div></div>
+                </div>
+                <div id="mp3" style="padding:10px 12px;display:flex;justify-content:space-between;align-items:flex-start;border-top:1px solid #F1F3F4;">
+                  <div>
+                    <div style="font-size:14px;font-weight:400;color:#202124;margin-bottom:2px;">Nearby Service</div>
+                    <div style="font-size:12px;color:#70757A;margin-bottom:1px;"><span style="color:#FBBC04;">&#9733;&#9733;&#9733;&#9733;</span> <span style="color:#202124;">4.6</span> (87) &middot; Local Service</div>
+                    <div style="font-size:12px;color:#70757A;margin-bottom:1px;">Your Area</div>
+                    <div style="font-size:12px;margin-bottom:2px;"><span style="color:#C5221F;">Closed</span> &middot; Opens 8 am Mon &middot; 01234 567892</div>
+                  </div>
+                  <div style="display:flex;gap:8px;flex-shrink:0;margin-left:12px;padding-top:4px;"><div style="display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:44px;height:44px;border-radius:50%;border:1px solid #DFE1E5;display:flex;align-items:center;justify-content:center;"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#1A73E8"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-7-.5-14.5T799-507q-5 29-27 48t-52 19h-80q-33 0-56.5-23.5T560-520v-40H400v-80q0-33 23.5-56.5T480-720h40q0-23 12.5-40.5T563-789q-20-5-40.5-8t-42.5-3q-134 0-227 93t-93 227h200q66 0 113 47t47 113v40H400v110q20 5 39.5 7.5T480-160Z"/></svg></div><span style="font-size:11px;color:#1A73E8;">Website</span></div><div style="display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:44px;height:44px;border-radius:50%;border:1px solid #DFE1E5;display:flex;align-items:center;justify-content:center;"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#1A73E8"><path d="M320-360h80v-120h140v100l140-140-140-140v100H360q-17 0-28.5 11.5T320-520v160ZM480-80q-15 0-29.5-6T424-104L104-424q-12-12-18-26.5T80-480q0-15 6-29.5t18-26.5l320-320q12-12 26.5-18t29.5-6q15 0 29.5 6t26.5 18l320 320q12 12 18 26.5t6 29.5q0 15-6 29.5T856-424L536-104q-12 12-26.5 18T480-80Z"/></svg></div><span style="font-size:11px;color:#1A73E8;">Directions</span></div></div>
+                </div>
+              </div><!-- end mp-listings -->
+              <div style="display:flex;align-items:center;gap:0;margin:8px 0 12px;">
+                <div style="flex:1;height:1px;background:#E2E8F0;"></div>
+                <div style="display:flex;align-items:center;gap:6px;background:#F1F3F4;border-radius:20px;padding:8px 24px;font-size:13px;color:#202124;cursor:pointer;white-space:nowrap;">More businesses &#62;</div>
+                <div style="flex:1;height:1px;background:#E2E8F0;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div style="max-width:520px;">
+            <div style="padding:8px 0;"><div style="display:flex;align-items:center;gap:8px;margin-bottom:3px;"><div style="width:26px;height:26px;background:#E8472A;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;">L</div><div><div style="font-size:13px;color:#202124;">Local Competitor</div><div style="font-size:11px;color:#70757A;">localcompetitor.co.uk</div></div></div><div style="font-size:16px;color:#1A0DAB;margin-bottom:2px;">Local Competitor | Services in Your Area</div><div style="font-size:12px;color:#4D5156;">Professional local services. Established and trusted in the local area.</div></div>
+            <div style="padding:8px 0;"><div style="display:flex;align-items:center;gap:8px;margin-bottom:3px;"><div style="width:26px;height:26px;background:#1A73E8;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;">N</div><div><div style="font-size:13px;color:#202124;">Nearby Services Ltd</div><div style="font-size:11px;color:#70757A;">nearbyservices.co.uk</div></div></div><div style="font-size:16px;color:#1A0DAB;margin-bottom:2px;">Nearby Services Ltd | Local Experts</div><div style="font-size:12px;color:#4D5156;">Covering all local service needs. Fast response times across the area.</div></div>
+            <div style="padding:8px 0;"><div style="display:flex;align-items:center;gap:8px;margin-bottom:3px;"><div style="width:26px;height:26px;background:#34A853;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;">A</div><div><div style="font-size:13px;color:#202124;">Area Trades Co</div><div style="font-size:11px;color:#70757A;">areatrades.co.uk</div></div></div><div style="font-size:16px;color:#1A0DAB;margin-bottom:2px;">Area Trades Co | Trusted Local Trades</div><div style="font-size:12px;color:#4D5156;">Local tradespeople covering your area. Rated and reviewed by real customers.</div></div>
+            <div style="padding:8px 0;"><div style="display:flex;align-items:center;gap:8px;margin-bottom:3px;"><div style="width:26px;height:26px;background:#9C27B0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;">C</div><div><div style="font-size:13px;color:#202124;">City Services</div><div style="font-size:11px;color:#70757A;">cityservices.co.uk</div></div></div><div style="font-size:16px;color:#1A0DAB;margin-bottom:2px;">City Services | Professional &amp; Reliable</div><div style="font-size:12px;color:#4D5156;">Serving the local area for over 10 years. Get a free quote today.</div></div>
+            <div style="padding:8px 0;"><div style="display:flex;align-items:center;gap:8px;margin-bottom:3px;"><div style="width:26px;height:26px;background:#FF6D00;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;">Q</div><div><div style="font-size:13px;color:#202124;">Quick Response Services</div><div style="font-size:11px;color:#70757A;">quickresponse.co.uk</div></div></div><div style="font-size:16px;color:#1A0DAB;margin-bottom:2px;">Quick Response Services | Available Now</div><div style="font-size:12px;color:#4D5156;">Fast local service when you need it most. Call us today for a quote.</div></div>
+            <div style="padding:8px 0;"><div style="display:flex;align-items:center;gap:8px;margin-bottom:3px;"><div style="width:26px;height:26px;background:#0097A7;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;">E</div><div><div style="font-size:13px;color:#202124;">Local Experts</div><div style="font-size:11px;color:#70757A;">localexperts.co.uk</div></div></div><div style="font-size:16px;color:#1A0DAB;margin-bottom:2px;">Local Experts | Rated 5 Stars</div><div style="font-size:12px;color:#4D5156;">Award-winning local service. Hundreds of happy customers across the area.</div></div>
+            <div style="padding:8px 0;"><div style="display:flex;align-items:center;gap:8px;margin-bottom:3px;"><div style="width:26px;height:26px;background:#C62828;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;">T</div><div><div style="font-size:13px;color:#202124;">Trades Match</div><div style="font-size:11px;color:#70757A;">tradesmatch.co.uk</div></div></div><div style="font-size:16px;color:#1A0DAB;margin-bottom:2px;">Trades Match | Find Local Trades</div><div style="font-size:12px;color:#4D5156;">Connect with trusted local tradespeople near you. Free to use.</div></div>
+            <div style="padding:8px 0;"><div style="display:flex;align-items:center;gap:8px;margin-bottom:3px;"><div style="width:26px;height:26px;background:#2E7D32;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;">S</div><div><div style="font-size:13px;color:#202124;">Service Finder</div><div style="font-size:11px;color:#70757A;">servicefinder.co.uk</div></div></div><div style="font-size:16px;color:#1A0DAB;margin-bottom:2px;">Service Finder | Local Services Near You</div><div style="font-size:12px;color:#4D5156;">The easiest way to find reliable local services in your area.</div></div>
+            <div style="padding:8px 0;"><div style="display:flex;align-items:center;gap:8px;margin-bottom:3px;"><div style="width:26px;height:26px;background:#1565C0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;">R</div><div><div style="font-size:13px;color:#202124;">Local Reviews</div><div style="font-size:11px;color:#70757A;">localreviews.co.uk</div></div></div><div style="font-size:16px;color:#1A0DAB;margin-bottom:2px;">Local Reviews | Verified Local Businesses</div><div style="font-size:12px;color:#4D5156;">Read reviews and find the best local businesses near you.</div></div>
+            <div id="yourBiz" style="padding:8px 0;">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:3px;"><div style="width:26px;height:26px;background:#4285F4;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;">Y</div><div><div style="font-size:13px;color:#202124;">Your Business</div><div style="font-size:11px;color:#70757A;">yourbusiness.co.uk</div></div></div>
+              <div style="font-size:16px;color:#1A0DAB;margin-bottom:2px;">Your Business | Your Area</div>
+              <div style="font-size:12px;color:#4D5156;">Professional local service across Your Area. Fast response, competitive rates.</div>
+            </div>
+            <!-- pagination -->
+            <div style="padding:14px 0;text-align:center;"><svg version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 139.9 44" width="240px" style="enable-background:new 0 0 139.9 44;display:inline-block;" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><style type="text/css">.st0{fill:#4285F4;}.st1{fill:#EA4335;}.st2{fill:#FBBC05;}.st3{fill:#34A853;}</style><g id="g28" transform="matrix(1.1800066,0,0,1.1800066,-1.7878574,5.2669315)"><g id="g15" transform="matrix(0.78557201,0,0,0.78557201,3.2127654,-5.9346067)"><path class="st0" d="m 8.8438554,19.486589 v 1.812541 h 4.3578136 c -0.115694,1.002683 -0.462777,1.773978 -1.002683,2.275319 -0.617036,0.617035 -1.619718,1.3112 -3.3551306,1.3112 -2.6609655,0 -4.7434603,-2.159624 -4.7434603,-4.82059 0,-2.660965 2.0439301,-4.820589 4.7434603,-4.820589 1.4268946,0 2.5067066,0.578471 3.2780016,1.3112 l 1.272636,-1.272636 c -1.079812,-1.041247 -2.545272,-1.851106 -4.5506376,-1.851106 -3.6636482,0 -6.7488256,2.969483 -6.7488256,6.633131 0,3.663649 3.0851774,6.633132 6.7488256,6.633132 1.9668006,0 3.4708256,-0.6556 4.6277656,-1.851106 1.195506,-1.195507 1.581154,-2.892354 1.581154,-4.242119 0,-0.424212 -0.03857,-0.80986 -0.07713,-1.118377 z" id="path1" style="stroke-width:0.385647"/><path class="st1" d="m 20.451836,17.982565 c -2.352448,0 -4.319249,1.812541 -4.319249,4.280683 0,2.468142 1.928237,4.280684 4.319249,4.280684 2.391013,0 4.319248,-1.773977 4.319248,-4.242119 0,-2.506707 -1.928235,-4.319248 -4.319248,-4.319248 z m 0,6.903084 c -1.3112,0 -2.429578,-1.079812 -2.429578,-2.583836 0,-1.542589 1.118377,-2.583836 2.429578,-2.583836 1.311199,0 2.429577,1.041247 2.429577,2.583836 0,1.504024 -1.118377,2.583836 -2.429577,2.583836 z" id="path2" style="stroke-width:0.385647"/><path class="st0" d="m 117.06854,18.934105 h -0.0771 c -0.42421,-0.501342 -1.23407,-0.964118 -2.27532,-0.964118 -2.15962,0 -4.01073,1.851106 -4.01073,4.280683 0,2.391013 1.85111,4.280684 4.01073,4.280684 1.04125,0 1.85111,-0.462776 2.27532,-0.964118 h 0.0771 v 0.617036 c 0,1.619718 -0.88699,2.506706 -2.27532,2.506706 -1.15694,0 -1.85111,-0.809859 -2.15962,-1.542588 l -1.61972,0.694165 c 0.46278,1.118376 1.73541,2.545271 3.81791,2.545271 2.19818,0 4.08786,-1.3112 4.08786,-4.473507 v -7.712944 h -1.77398 v 0.73273 z m -2.15962,5.938966 c -1.31121,0 -2.27532,-1.118377 -2.27532,-2.583836 0,-1.504024 1.00268,-2.583836 2.27532,-2.583836 1.27263,0 2.27531,1.118377 2.27531,2.622401 0.0386,1.465459 -0.96411,2.545271 -2.27531,2.545271 z" id="path3" style="stroke-width:0.385647"/><path class="st2" d="m 105.57625,17.969987 c -2.35244,0 -4.31925,1.812541 -4.31925,4.280683 0,2.468142 1.92824,4.280684 4.31925,4.280684 2.39102,0 4.31925,-1.773977 4.31925,-4.242119 0,-2.506707 -1.92823,-4.319248 -4.31925,-4.319248 z m 0,6.903084 c -1.3112,0 -2.42957,-1.079812 -2.42957,-2.583836 0,-1.542589 1.11837,-2.583836 2.42957,-2.583836 1.3112,0 2.42958,1.041247 2.42958,2.583836 0,1.504024 -1.11838,2.583836 -2.42958,2.583836 z" id="path4" style="stroke-width:0.385647"/><path class="st3" d="m 120.34654,13.612174 h 1.85111 v 12.957745 h -1.85111 z" id="path5" style="stroke-width:0.385647"/><path class="st1" d="m 127.90523,24.873071 c -0.96412,0 -1.61972,-0.424212 -2.0825,-1.3112 l 5.74614,-2.352448 -0.19282,-0.501341 c -0.34708,-0.964118 -1.46546,-2.738095 -3.66365,-2.738095 -2.19819,0 -4.04929,1.735412 -4.04929,4.280683 0,2.391013 1.81254,4.280684 4.24212,4.280684 1.9668,0 3.08517,-1.195506 3.58651,-1.889671 l -1.46546,-0.964118 c -0.50134,0.73273 -1.15694,1.195506 -2.12105,1.195506 z m -0.1157,-5.283366 c 0.7713,0 1.4269,0.385647 1.61972,0.925553 l -3.85647,1.619718 c -0.0386,-1.773977 1.27263,-2.545271 2.23675,-2.545271 z" id="path6" style="stroke-width:0.385647"/><path class="st2" d="m 96.13542,17.963337 c -2.35244,0 -4.31925,1.81254 -4.31925,4.280683 0,2.468142 1.92824,4.280684 4.31925,4.280684 2.39102,0 4.31925,-1.773977 4.31925,-4.242119 0,-2.506707 -1.92823,-4.319248 -4.31925,-4.319248 z m 0,6.903083 c -1.3112,0 -2.42957,-1.079812 -2.42957,-2.583836 0,-1.542589 1.11837,-2.583835 2.42957,-2.583835 1.3112,0 2.42958,1.041246 2.42958,2.583835 0,1.504024 -1.11838,2.583836 -2.42958,2.583836 z" id="path7" style="stroke-width:0.385647"/><path class="st2" d="m 86.718056,17.991282 c -2.35244,0 -4.31925,1.81254 -4.31925,4.280683 0,2.468142 1.92824,4.280684 4.31925,4.280684 2.39102,0 4.31925,-1.773977 4.31925,-4.242119 0,-2.506707 -1.92823,-4.319248 -4.31925,-4.319248 z m 0,6.903083 c -1.3112,0 -2.42957,-1.079812 -2.42957,-2.583836 0,-1.542589 1.11837,-2.583835 2.42957,-2.583835 1.3112,0 2.42958,1.041246 2.42958,2.583835 0,1.504024 -1.11838,2.583836 -2.42958,2.583836 z" id="path8" style="stroke-width:0.385647"/><path class="st2" d="m 77.240831,17.981693 c -2.35244,0 -4.31925,1.81254 -4.31925,4.280683 0,2.468142 1.92824,4.280684 4.31925,4.280684 2.39102,0 4.31925,-1.773977 4.31925,-4.242119 0,-2.506707 -1.92823,-4.319248 -4.31925,-4.319248 z m 0,6.903083 c -1.3112,0 -2.42957,-1.079812 -2.42957,-2.583836 0,-1.542589 1.11837,-2.583835 2.42957,-2.583835 1.3112,0 2.42958,1.041246 2.42958,2.583835 0,1.504024 -1.11838,2.583836 -2.42958,2.583836 z" id="path9" style="stroke-width:0.385647"/><path class="st2" d="m 67.730044,17.983097 c -2.35244,0 -4.31925,1.81254 -4.31925,4.280683 0,2.468142 1.92824,4.280684 4.31925,4.280684 2.39102,0 4.31925,-1.773977 4.31925,-4.242119 0,-2.506707 -1.92823,-4.319248 -4.31925,-4.319248 z m 0,6.903083 c -1.3112,0 -2.42957,-1.079812 -2.42957,-2.583836 0,-1.542589 1.11837,-2.583835 2.42957,-2.583835 1.3112,0 2.42958,1.041246 2.42958,2.583835 0,1.504024 -1.11838,2.583836 -2.42958,2.583836 z" id="path10" style="stroke-width:0.385647"/><path class="st2" d="m 58.31268,18.011042 c -2.35244,0 -4.31925,1.81254 -4.31925,4.280683 0,2.468142 1.92824,4.280684 4.31925,4.280684 2.39102,0 4.31925,-1.773977 4.31925,-4.242119 0,-2.506707 -1.92823,-4.319248 -4.31925,-4.319248 z m 0,6.903083 c -1.3112,0 -2.42957,-1.079812 -2.42957,-2.583836 0,-1.542589 1.11837,-2.583835 2.42957,-2.583835 1.3112,0 2.42958,1.041246 2.42958,2.583835 0,1.504024 -1.11838,2.583836 -2.42958,2.583836 z" id="path11" style="stroke-width:0.385647"/><path class="st2" d="m 48.835455,18.001453 c -2.35244,0 -4.31925,1.81254 -4.31925,4.280683 0,2.468142 1.92824,4.280684 4.31925,4.280684 2.39102,0 4.31925,-1.773977 4.31925,-4.242119 0,-2.506707 -1.92823,-4.319248 -4.31925,-4.319248 z m 0,6.903083 c -1.3112,0 -2.42957,-1.079812 -2.42957,-2.583836 0,-1.542589 1.11837,-2.583835 2.42957,-2.583835 1.3112,0 2.42958,1.041246 2.42958,2.583835 0,1.504024 -1.11838,2.583836 -2.42958,2.583836 z" id="path12" style="stroke-width:0.385647"/><path class="st2" d="m 39.362949,17.991282 c -2.35244,0 -4.31925,1.81254 -4.31925,4.280683 0,2.468142 1.92824,4.280684 4.31925,4.280684 2.39102,0 4.31925,-1.773977 4.31925,-4.242119 0,-2.506707 -1.92823,-4.319248 -4.31925,-4.319248 z m 0,6.903083 c -1.3112,0 -2.42957,-1.079812 -2.42957,-2.583836 0,-1.542589 1.11837,-2.583835 2.42957,-2.583835 1.3112,0 2.42958,1.041246 2.42958,2.583835 0,1.504024 -1.11838,2.583836 -2.42958,2.583836 z" id="path13" style="stroke-width:0.385647"/><path class="st2" d="m 29.885724,17.981693 c -2.35244,0 -4.31925,1.81254 -4.31925,4.280683 0,2.468142 1.92824,4.280684 4.31925,4.280684 2.39102,0 4.31925,-1.773977 4.31925,-4.242119 0,-2.506707 -1.92823,-4.319248 -4.31925,-4.319248 z m 0,6.903083 c -1.3112,0 -2.42957,-1.079812 -2.42957,-2.583836 0,-1.542589 1.11837,-2.583835 2.42957,-2.583835 1.3112,0 2.42958,1.041246 2.42958,2.583835 0,1.504024 -1.11838,2.583836 -2.42958,2.583836 z" id="path14" style="stroke-width:0.385647"/></g><g id="g27"><text xml:space="preserve" style="font-size:4.93307px;font-family:Arial;text-align:center;text-anchor:middle;fill:#000000;stroke-width:0.41109;" x="19.034624" y="23.772821" id="text16"><tspan id="tspan16" x="19.034624" y="23.772821" style="stroke-width:0.41109">1</tspan></text><text xml:space="preserve" style="font-size:4.93307px;font-family:Arial;text-align:center;text-anchor:middle;fill:#4b88f1;stroke-width:0.41109;" x="26.427246" y="23.772821" id="text17"><tspan x="26.427246" y="23.772821">2</tspan></text><text xml:space="preserve" style="font-size:4.93307px;font-family:Arial;text-align:center;text-anchor:middle;fill:#4b88f1;stroke-width:0.41109;" x="33.927246" y="23.772821"><tspan x="33.927246" y="23.772821">3</tspan></text><text xml:space="preserve" style="font-size:4.93307px;font-family:Arial;text-align:center;text-anchor:middle;fill:#4b88f1;stroke-width:0.41109;" x="41.327248" y="23.772821"><tspan x="41.327248" y="23.772821">4</tspan></text><text xml:space="preserve" style="font-size:4.93307px;font-family:Arial;text-align:center;text-anchor:middle;fill:#4b88f1;stroke-width:0.41109;" x="48.627228" y="23.772821"><tspan x="48.627228" y="23.772821">5</tspan></text><text xml:space="preserve" style="font-size:4.93307px;font-family:Arial;text-align:center;text-anchor:middle;fill:#4b88f1;stroke-width:0.41109;" x="55.927246" y="23.772821"><tspan x="55.927246" y="23.772821">6</tspan></text><text xml:space="preserve" style="font-size:4.93307px;font-family:Arial;text-align:center;text-anchor:middle;fill:#4b88f1;stroke-width:0.41109;" x="63.327248" y="23.772821"><tspan x="63.327248" y="23.772821">7</tspan></text><text xml:space="preserve" style="font-size:4.93307px;font-family:Arial;text-align:center;text-anchor:middle;fill:#4b88f1;stroke-width:0.41109;" x="70.827126" y="23.772821"><tspan x="70.827126" y="23.772821">8</tspan></text><text xml:space="preserve" style="font-size:4.93307px;font-family:Arial;text-align:center;text-anchor:middle;fill:#4b88f1;stroke-width:0.41109;" x="78.327126" y="23.772821"><tspan x="78.327126" y="23.772821">9</tspan></text><text xml:space="preserve" style="font-size:4.93307px;font-family:Arial;text-align:center;text-anchor:middle;fill:#4b88f1;stroke-width:0.41109;" x="85.627396" y="23.772821"><tspan x="85.627396" y="23.772821">10</tspan></text></g><g id="g26"><g style="fill:#4b88f1;" id="g16" transform="matrix(0.01164873,0,0,0.01164873,107.33828,13.723474)"><path d="m 504,-480 -184,-184 56,-56 240,240 -240,240 -56,-56 z" style="fill:#4b88f1;"/></g><text xml:space="preserve" style="font-size:4.93307px;font-family:Arial;text-align:center;text-anchor:middle;fill:#4b88f1;stroke-width:0.41109;" x="112.23075" y="23.736691"><tspan x="112.23075" y="23.736691">Next</tspan></text></g></g></svg></div>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- end page-results -->
+
+  </div><!-- end page-wrap -->
+</div><!-- end browser -->
+
+<div id="g-flying" style="position:fixed;pointer-events:none;z-index:9999;opacity:0;transition:none;"></div>
+
+<script>
+(function(){
+
+  // --- Elements ---
+  var pageHome    = document.getElementById('page-home');
+  var pageResults = document.getElementById('page-results');
+  var urlBarText  = document.getElementById('url-bar-text');
+  var typed       = document.getElementById('typed');
+  var pageInner   = document.getElementById('pageInner');
+  var yourBiz     = document.getElementById('yourBiz');
+  var flying      = document.getElementById('g-flying');
+  var mp1         = document.getElementById('mp1');
+  var mp1name     = document.getElementById('mp1name');
+  var mp2         = document.getElementById('mp2');
+  var mp3         = document.getElementById('mp3');
+  var mpin1       = null;
+
+  // --- Helpers ---
+  function showHome(){
+    pageHome.classList.remove('hidden');
+    pageResults.classList.add('hidden');
+    urlBarText.textContent = 'google.com';
+  }
+
+  function showResults(){
+    pageResults.classList.remove('hidden');
+    pageHome.classList.add('hidden');
+    urlBarText.textContent = 'google.com/search?q=near+me';
+  }
+
+  function resetResults(){
+    pageInner.style.transition = 'none';
+    pageInner.style.transform = 'translateY(0)';
+    yourBiz.style.opacity = '1';
+    flying.style.opacity = '0';
+    flying.style.transition = 'none';
+    flying.style.transform = 'none';
+    flying.style.boxShadow = 'none';
+    mp1.style.transition = 'none';
+    mp1.style.transform = 'translateY(0)';
+    mp1.style.background = '';
+    mp2.style.transition = 'none';
+    mp2.style.transform = 'translateY(0)';
+    mp3.style.transition = 'none';
+    mp3.style.transform = 'translateY(0)';
+    if(mpin1) mpin1.setAttribute('fill','#EA4335');
+  }
+
+  // --- Act 2a: Typing ---
+  function runHome(onComplete){
+    typed.textContent = '';
+    var query = 'near me';
+    var i = 0;
+    setTimeout(function typeChar(){
+      typed.textContent = query.substring(0, i);
+      i++;
+      if(i <= query.length){
+        setTimeout(typeChar, 90);
+      } else {
+        setTimeout(onComplete, 550);
+      }
+    }, 700);
+  }
+
+  // --- Act 2b: Results animation ---
+  function runResults(onComplete){
+    resetResults();
+
+    var mapPos      = mp1.getBoundingClientRect();
+    var mpListings  = document.getElementById('mp-listings');
+    var listingsPos = mpListings.getBoundingClientRect();
+
+    setTimeout(function(){
+      var scrollDist = pageInner.scrollHeight - 400;
+      pageInner.style.transition = 'transform 1.4s linear';
+      pageInner.style.transform = 'translateY(-' + scrollDist + 'px)';
+
+      setTimeout(function(){
+        var bizPos = yourBiz.getBoundingClientRect();
+
+        flying.innerHTML = yourBiz.innerHTML;
+        flying.style.transition = 'none';
+        flying.style.width = bizPos.width + 'px';
+        flying.style.height = bizPos.height + 'px';
+        flying.style.top = bizPos.top + 'px';
+        flying.style.left = bizPos.left + 'px';
+        flying.style.background = '#ffffff';
+        flying.style.borderRadius = '4px';
+        flying.style.padding = '8px 0';
+        flying.style.boxSizing = 'border-box';
+        flying.style.boxShadow = '0 8px 32px rgba(66,133,244,0.35)';
+        flying.style.opacity = '1';
+        flying.style.overflow = 'hidden';
+        yourBiz.style.opacity = '0';
+
+        setTimeout(function(){
+          pageInner.style.transition = 'transform 1s cubic-bezier(0.4,0,0.2,1)';
+          pageInner.style.transform = 'translateY(0)';
+
+          var hoverTop = listingsPos.top - bizPos.height - 6;
+          flying.style.transition = 'top 1s cubic-bezier(0.4,0,0.2,1), left 1s, width 1s, height 1s, box-shadow 1s';
+          flying.style.top = hoverTop + 'px';
+          flying.style.left = mapPos.left + 'px';
+          flying.style.width = mapPos.width + 'px';
+          flying.style.height = bizPos.height + 'px';
+          flying.style.boxShadow = '0 8px 24px rgba(66,133,244,0.3)';
+
+          setTimeout(function(){
+            var mp1height = mp1.offsetHeight;
+            mp1.style.transition = 'transform 0.45s cubic-bezier(0.4,0,0.2,1)';
+            mp1.style.transform = 'translateY(' + mp1height + 'px)';
+            mp2.style.transition = 'transform 0.45s cubic-bezier(0.4,0,0.2,1)';
+            mp2.style.transform = 'translateY(' + mp1height + 'px)';
+            mp3.style.transition = 'transform 0.45s cubic-bezier(0.4,0,0.2,1)';
+            mp3.style.transform = 'translateY(' + mp1height + 'px)';
+
+            flying.style.transition = 'top 0.45s cubic-bezier(0.4,0,0.2,1), box-shadow 0.45s';
+            flying.style.top = listingsPos.top + 'px';
+            flying.style.boxShadow = '0 1px 4px rgba(0,0,0,0.1)';
+
+            setTimeout(function(){
+              if(mpin1) mpin1.setAttribute('fill','#4285F4');
+              flying.style.transition = 'opacity 0.2s ease';
+              flying.style.opacity = '0';
+
+              setTimeout(function(){
+                flying.style.padding = '10px 12px';
+                flying.style.width = mapPos.width + 'px';
+                flying.style.height = '';
+                flying.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:flex-start;"><div><div style="font-size:14px;font-weight:400;color:#202124;margin-bottom:2px;">Your Business</div><div style="font-size:12px;color:#70757A;margin-bottom:1px;"><span style="color:#FBBC04;">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <span style="color:#202124;">4.9</span> (312) &middot; Local Service</div><div style="font-size:12px;color:#70757A;margin-bottom:1px;">Your Area</div><div style="font-size:12px;margin-bottom:2px;"><span style="color:#188038;">Open 24 hours</span> &middot; 01234 567890</div><div style="font-size:12px;color:#70757A;">"More reviews, more visibility, more business"</div></div><div style="display:flex;gap:8px;flex-shrink:0;margin-left:12px;padding-top:4px;"><div style="display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:44px;height:44px;border-radius:50%;border:1px solid #DFE1E5;display:flex;align-items:center;justify-content:center;"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#1A73E8"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-7-.5-14.5T799-507q-5 29-27 48t-52 19h-80q-33 0-56.5-23.5T560-520v-40H400v-80q0-33 23.5-56.5T480-720h40q0-23 12.5-40.5T563-789q-20-5-40.5-8t-42.5-3q-134 0-227 93t-93 227h200q66 0 113 47t47 113v40H400v110q20 5 39.5 7.5T480-160Z"/></svg></div><span style="font-size:11px;color:#1A73E8;">Website</span></div><div style="display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:44px;height:44px;border-radius:50%;border:1px solid #DFE1E5;display:flex;align-items:center;justify-content:center;"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#1A73E8"><path d="M320-360h80v-120h140v100l140-140-140-140v100H360q-17 0-28.5 11.5T320-520v160ZM480-80q-15 0-29.5-6T424-104L104-424q-12-12-18-26.5T80-480q0-15 6-29.5t18-26.5l320-320q12-12 26.5-18t29.5-6q15 0 29.5 6t26.5 18l320 320q12 12 18 26.5t6 29.5q0 15-6 29.5T856-424L536-104q-12 12-26.5 18T480-80Z"/></svg></div><span style="font-size:11px;color:#1A73E8;">Directions</span></div></div></div>';
+
+                flying.style.transition = 'opacity 0.3s ease';
+                flying.style.opacity = '1';
+
+                // Hold on result, then cut back to home
+                setTimeout(function(){
+                  flying.style.opacity = '0';
+                  onComplete();
+                }, 1750);
+
+              }, 220);
+            }, 480);
+          }, 800);
+        }, 200);
+      }, 1650);
+    }, 850);
+  }
+
+  // --- Master loop ---
+  function loop(){
+    showHome();
+    runHome(function(){
+      // Crossfade to results
+      showResults();
+      runResults(function(){
+        // Fade back to home after results complete
+        showHome();
+        setTimeout(loop, 600);
+      });
+    });
+  }
+
+  loop();
+
+})();
+</script>

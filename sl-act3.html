@@ -1,0 +1,117 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#0F172A;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:40px 20px;font-family:'Inter',sans-serif;}
+
+.panel{position:relative;border-radius:16px;width:100%;max-width:1000px;overflow:hidden;}
+.map-bg{width:100%;height:500px;display:block;background:#E8EAED;}
+.grid-overlay{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
+.grid-inner{width:600px;height:500px;display:grid;grid-template-columns:repeat(7,1fr);grid-template-rows:repeat(7,1fr);padding:28px;}
+.cell{display:flex;align-items:center;justify-content:center;perspective:400px;}
+.pin{width:44px;height:44px;position:relative;transform-style:preserve-3d;}
+.face{position:absolute;inset:0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#fff;backface-visibility:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.25);}
+.front{transform:rotateY(0deg);}
+.back{transform:rotateY(180deg);}
+</style>
+
+<div class="panel">
+  <img src="https://lewisgrahamfox-stack.github.io/stridelocal-icons/Act_3_Map.png" class="map-bg" />
+  <div class="grid-overlay"><div class="grid-inner" id="grid"></div></div>
+</div>
+
+<script>
+(function(){
+  var grid = document.getElementById('grid');
+  var SIZE = 7;
+  var pins = [], fronts = [], backs = [];
+
+  var cx = 3, cy = 3;
+  var maxDist = Math.sqrt(Math.pow(0 - cy, 2) + Math.pow(0 - cx, 2));
+
+  function dist(i){
+    var row = Math.floor(i / SIZE);
+    var col = i % SIZE;
+    return Math.sqrt(Math.pow(row - cy, 2) + Math.pow(col - cx, 2));
+  }
+
+  // Numbers based on distance: edges=high, centre=low
+  function redNum(i)  { return Math.round(15 + (dist(i) / maxDist) * 5); }
+  function amberNum(i){ return Math.round(5  + (dist(i) / maxDist) * 4); }
+  function greenNum(i){ return Math.round(1  + (dist(i) / maxDist) * 2); }
+
+  // Ripple outward from centre — centre flips first
+  function rippleDelay(i){
+    return dist(i) * 120;
+  }
+
+  var pins = [], fronts = [], backs = [];
+
+  for(var i = 0; i < SIZE * SIZE; i++){
+    var cell = document.createElement('div');
+    cell.className = 'cell';
+    var pin = document.createElement('div');
+    pin.className = 'pin';
+    var front = document.createElement('div');
+    front.className = 'face front';
+    front.style.background = '#EA4335';
+    front.textContent = redNum(i);
+    var back = document.createElement('div');
+    back.className = 'face back';
+    back.style.background = '#F59E0B';
+    back.textContent = amberNum(i);
+    pin.appendChild(front);
+    pin.appendChild(back);
+    cell.appendChild(pin);
+    grid.appendChild(cell);
+    pins.push(pin);
+    fronts.push(front);
+    backs.push(back);
+  }
+
+  var maxDelay = 0;
+  for(var i = 0; i < SIZE * SIZE; i++){
+    if(rippleDelay(i) > maxDelay) maxDelay = rippleDelay(i);
+  }
+
+  function resetAll(){
+    pins.forEach(function(pin, i){
+      pin.style.transition = 'none';
+      pin.style.transform = 'rotateY(0deg)';
+      fronts[i].style.background = '#EA4335';
+      fronts[i].textContent = redNum(i);
+      backs[i].style.background = '#F59E0B';
+      backs[i].textContent = amberNum(i);
+    });
+  }
+
+  function flipAll(deg, onAllDone){
+    pins.forEach(function(pin, i){
+      setTimeout(function(){
+        pin.style.transition = 'transform 0.5s cubic-bezier(0.4,0,0.2,1)';
+        pin.style.transform = 'rotateY(' + deg + 'deg)';
+      }, rippleDelay(i));
+    });
+    if(onAllDone) setTimeout(onAllDone, maxDelay + 550);
+  }
+
+  function run(){
+    resetAll();
+
+    setTimeout(function(){
+      flipAll(180, function(){
+        pins.forEach(function(_, i){
+          fronts[i].style.background = '#22C55E';
+          fronts[i].textContent = greenNum(i);
+        });
+        setTimeout(function(){
+          flipAll(360, function(){
+            setTimeout(run, 2000);
+          });
+        }, 1500);
+      });
+    }, 1000);
+  }
+
+  run();
+})();
+</script>
