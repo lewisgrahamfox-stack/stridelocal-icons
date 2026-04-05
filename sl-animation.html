@@ -518,5 +518,13 @@ body{background:transparent;display:flex;flex-direction:column;align-items:cente
 
   loop();
 
+  // Tell parent iframe the correct height
+  function reportHeight(){
+    var h = document.body.scrollHeight;
+    window.parent.postMessage({iframeHeight: h}, '*');
+  }
+  setTimeout(reportHeight, 500);
+  window.addEventListener('resize', reportHeight);
+
 })();
 </script>
